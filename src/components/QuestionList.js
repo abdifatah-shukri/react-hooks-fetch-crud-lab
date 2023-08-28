@@ -4,7 +4,11 @@ function QuestionList() {
   return (
     <section>
       <h1>Quiz Questions</h1>
-      <ul>{/* display QuestionItem components here after fetching */}</ul>
+      <ul>
+        {quizes.map((item) => (
+          <QuestionItem question={item} key={item.id} onDelete={onDelete} />
+        ))}
+      </ul>
     </section>
   );
 }
